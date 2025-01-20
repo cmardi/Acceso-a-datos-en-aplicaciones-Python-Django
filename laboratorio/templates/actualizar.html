@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="text-center my-4">
+        <h1>Actualizar los datos del Laboratorio</h1>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" required aria-describedby="nombreHelp" value="{{laboratorio.nombre}}">
+        
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" class="form-control" name="ciudad" id="ciudad" aria-describedby="ciudadHelp" value="{{laboratorio.ciudad}}">
+    
+        <label for="pais">País:</label>
+        <input type="text" class="form-control" name="pais" id="pais" aria-describedby="paisHelp" value="{{laboratorio.pais}}">
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        
+    </form>
+
+</div>
+
+{% endblock %}

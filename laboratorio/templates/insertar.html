@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="text-center my-4">
+        <h1>Insertar los datos del Laboratorios</h1>
+    </div>
+
+    <form method="POST" action="/insertar/">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" required aria-describedby="nombreHelp">
+        
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" class="form-control" name="ciudad" id="ciudad" aria-describedby="ciudadHelp">
+    
+        <label for="pais">País:</label>
+        <input type="text" class="form-control" name="pais" id="pais" aria-describedby="paisHelp">
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        
+    </form>
+
+</div>
+
+{% endblock %}
